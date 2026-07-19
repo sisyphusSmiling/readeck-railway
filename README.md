@@ -12,19 +12,17 @@ that path returns `Invalid Docker image`. A Dockerfile build has no such
 restriction: `FROM` pulls from any public registry. This repo is that
 one-line bridge, plus the Railway config to go with it.
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/workspace/templates/f0c75b2c-f1d5-4fec-b510-d0613a85208d)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/xStzAa?referralCode=hbcoEC&utm_medium=integration&utm_source=template&utm_campaign=generic)
 
 ## Deploy
 
 1. Fork or clone this repo, push to your GitHub.
 2. Railway → New Project → Deploy from GitHub repo → select it. Railway
    detects the Dockerfile and builds.
-3. **Attach a volume** mounted at `/readeck` — right-click the service
-   tile on the project canvas → Attach Volume (or Cmd+K → "volume").
-   This holds the SQLite DB and all article content — without it, your
-   data dies on every deploy. Volumes are attached in the dashboard;
-   the classic `railway.json` config only covers build/deploy settings
-   and cannot declare volumes.
+3. **Volume**: the template provisions it at `/readeck` automatically
+   (SQLite DB + article content). Deploying from the repo directly
+   instead of the template? Attach one manually — right-click the
+   service tile → Attach Volume — or your data dies on every deploy.
 4. Service → Settings → Networking → Generate Domain, target port `8000`.
    A custom domain is worth setting up front: the instance URL gets baked
    into every client (browser extension, mobile shortcuts, e-reader

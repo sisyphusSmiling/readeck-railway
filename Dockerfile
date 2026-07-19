@@ -8,6 +8,13 @@
 FROM codeberg.org/readeck/readeck:latest
 
 ENV READECK_SERVER_HOST=0.0.0.0 \
-    READECK_SERVER_PORT=8000
+    READECK_SERVER_PORT=8000 \
+    READECK_USE_X_FORWARDED=true
+
+# Railway's runtime requires the working directory to exist as a filesystem
+# layer in the image; the upstream image's /readeck apparently isn't
+# materialized in a way Railway accepts. WORKDIR creates the directory
+# (no shell needed, works even on scratch-based images).
+WORKDIR /readeck
 
 EXPOSE 8000

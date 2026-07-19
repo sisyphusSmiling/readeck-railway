@@ -8,8 +8,7 @@
 FROM codeberg.org/readeck/readeck:latest
 
 ENV READECK_SERVER_HOST=0.0.0.0 \
-    READECK_SERVER_PORT=8000 \
-    READECK_USE_X_FORWARDED=true
+    READECK_SERVER_PORT=8000
 
 # Railway's runtime requires the working directory to exist as a filesystem
 # layer in the image; the upstream image's /readeck apparently isn't

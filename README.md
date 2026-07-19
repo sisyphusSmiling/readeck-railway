@@ -38,7 +38,21 @@ one-line bridge, plus the Railway config to go with it.
 
 Server settings are environment variables (`READECK_*`); the Dockerfile sets
 host and port, everything else is optional. See the
-[Readeck configuration docs](https://readeck.org/en/docs/).
+[Readeck configuration docs](https://readeck.org/en/docs/configuration).
+
+### Behind Railway's proxy
+
+Railway terminates TLS at its edge, so set these as service environment
+variables once you know your domain:
+
+| Variable | Value | Why |
+|---|---|---|
+| `READECK_SERVER_BASE_URL` | `https://your.domain` | Correct scheme in generated URLs; fixes CSRF/login failures behind TLS-terminating proxies |
+| `READECK_ALLOWED_HOSTS` | `your.domain` | Host-header allowlist; recommended hardening |
+| `READECK_TRUSTED_PROXIES` | only if login returns 403 | Networks allowed to set `X-Forwarded-*`; defaults to private ranges, widen only if needed |
+
+Note: `READECK_USE_X_FORWARDED` was removed in Readeck 0.16 and replaced by
+`trusted_proxies`.
 
 ## Upgrading
 

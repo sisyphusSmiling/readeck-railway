@@ -14,7 +14,7 @@ one-line bridge, plus the Railway config to go with it.
 
 <!-- After first deploy: Railway → project → Create template → publish,
      then replace TEMPLATE_CODE below and delete this comment. -->
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/TEMPLATE_CODE)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/workspace/templates/f0c75b2c-f1d5-4fec-b510-d0613a85208d)
 
 ## Deploy
 

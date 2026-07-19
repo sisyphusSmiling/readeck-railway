@@ -12,7 +12,7 @@ that path returns `Invalid Docker image`. A Dockerfile build has no such
 restriction: `FROM` pulls from any public registry. This repo is that
 one-line bridge, plus the Railway config to go with it.
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/FzR0vK?referralCode=hbcoEC&utm_medium=integration&utm_source=template&utm_campaign=generic)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/readeck-railway?referralCode=hbcoEC&utm_medium=integration&utm_source=template&utm_campaign=generic)
 
 ## Deploy
 
